@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export default function TextForm(props) {
 
   var darkModeStyle = {
-    backgroundColor: props.mode==='light'?'white':'black', 
+    backgroundColor: props.mode==='light'?'white':'#101010', 
     color: props.mode==='light'?'black':'white'
   }
     

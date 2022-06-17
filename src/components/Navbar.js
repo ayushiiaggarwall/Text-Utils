@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 export default function Navbar(props) {
   return (
@@ -42,8 +42,7 @@ export default function Navbar(props) {
               }`}
               htmlFor="flexSwitchCheckDefault"
             >
-              Enable{" "}
-              {props.capitalize(props.mode === "light" ? "dark" : "light")} Mode
+              Enable {props.capitalize(props.mode === "light" ? "dark" : "light")} Mode
             </label>
           </div>
         </div>

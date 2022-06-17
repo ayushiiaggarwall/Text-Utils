@@ -23,7 +23,7 @@ function App() {
       showAlert("Light Mode has been enabled!", "success");
     } else {
       setMode("dark");
-      document.body.style.backgroundColor = "black";
+      document.body.style.backgroundColor = "#101010";
       document.body.style.color = "white";
       showAlert("Dark Mode has been enabled!", "success");
     }

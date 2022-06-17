@@ -3,7 +3,7 @@ import React from "react";
 export default function About(props) {
 
   var darkModeStyle = {
-    backgroundColor: props.mode==='light'?'white':'black', 
+    backgroundColor: props.mode==='light'?'white':'#101010', 
     color: props.mode==='light'?'black':'white',
     boder: props.mode==='dark' ? '2px solid white':'2px solid black'
   }
