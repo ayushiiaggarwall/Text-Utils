@@ -5,7 +5,8 @@ export default function About(props) {
   var darkModeStyle = {
     backgroundColor: props.mode==='light'?'white':'#101010', 
     color: props.mode==='light'?'black':'white',
-    boder: props.mode==='dark' ? '2px solid white':'2px solid black'
+    border: "2px solid",
+    boderColor: props.mode==='light' ? 'black':'white'
   }
 
   return (
@@ -19,6 +20,7 @@ export default function About(props) {
               <button
                 className="accordion-button"
                 type="button"
+                style={darkModeStyle}
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
                 aria-expanded="true"

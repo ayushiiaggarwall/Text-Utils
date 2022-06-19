@@ -58,19 +58,19 @@ export default function TextForm(props) {
           onChange={handleOnChange}
           rows="9"
         ></textarea>
-        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleUpClick} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
+        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleUpClick} disabled={text.length === 0} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
           Convert to Uppercase
         </button>
-        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleLoClick} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
+        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleLoClick} disabled={text.length === 0} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
             Convert to Lowercase
         </button>
-        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleClearClick} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
+        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleClearClick} disabled={text.length === 0} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
             Clear Text
         </button>
-        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleCopyClick} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
+        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleCopyClick} disabled={text.length === 0} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
             Copy Text
         </button>
-        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleExtraSpaces} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
+        <button className={`btn btn-${props.mode==='light'?'dark':'secondary'} mt-3 mx-2`} onClick={handleExtraSpaces} disabled={text.length === 0} style = {{border : props.mode==='dark'?' 2px solid white':'2px solid black' }}>
             Remove Extra Spaces
         </button>
       </div>
@@ -79,15 +79,15 @@ export default function TextForm(props) {
     <div className="container mt-5">
         <h3 className="my-3">Preview of input text:</h3>
         <div className="border border-secondary border-1 rounded px-2 py-2">
-        <p>{text.length >0 ? text : "Enter text in the text area above to preview it."}</p>
+        <p>{text.length >0 ? text : "Nothing to Preview!"}</p>
         </div>
     </div>
     
     <div className="container my-5">
         <h3 className="my-3">Your Text Summary</h3>
         <div className="border border-secondary border-1 rounded px-2 py-2">
-        <p>{text.split(" ")[text.split(" ").length-1] === "" ? text.split(" ").length-1 : text.split(" ").length} words || {text.length} characters</p>
-        <p>{text.split(" ")[text.split(" ").length-1] === "" ?  0.008 * (text.split(" ").length-1) : 0.008 * (text.split(" ").length)} minutes (Note: Assuming a reader reads 125 words in a minute)</p>
+        <p>{text.split(" ").filter((element) => {return element.length!==0}).length} words || {text.length} characters</p>
+        <p>{0.008*(text.split(" ").filter((element) => {return element.length!==0}))} minutes (Note: Assuming a reader reads 125 words in a minute)</p>
         </div>
     </div>
       </>
