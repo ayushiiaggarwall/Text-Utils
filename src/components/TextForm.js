@@ -28,9 +28,7 @@ export default function TextForm(props) {
   };
 
   const handleCopyClick = () => {
-    let copiedText = document.getElementById('myTextBox');
-    copiedText.select();
-    navigator.clipboard.writeText(copiedText.value);
+    navigator.clipboard.writeText(text);
     props.showAlert('The text has been copied to clipboard!','success');
   };
 
@@ -86,7 +84,7 @@ export default function TextForm(props) {
     <div className="container my-5">
         <h3 className="my-3">Your Text Summary</h3>
         <div className="border border-secondary border-1 rounded px-2 py-2">
-        <p>{text.split(" ").filter((element) => {return element.length!==0}).length} words || {text.length} characters</p>
+        <p>{text.split(/\s+/).filter((element) => {return element.length!==0}).length} words || {text.length} characters</p>
         <p>{0.008*(text.split(" ").filter((element) => {return element.length!==0}))} minutes (Note: Assuming a reader reads 125 words in a minute)</p>
         </div>
     </div>
