@@ -17,4 +17,4 @@ Tech Stack -
   - Bootstrap
   - React
 
-The link for the web application is https://ayu0107.github.io/Text-Utils/
+The link for the web application is https://ayushiiaggarwall.github.io/Text-Utils/
